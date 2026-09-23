@@ -1,0 +1,11 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-20.04",
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {}
+  },
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": { "label": "Desktop", "onAutoForward": "openBrowser" }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential git qtbase5-dev qt5-qmake libqt5svg5-dev && git clone https://gitlab.com/nsnam/netanim.git ~/netanim && cd ~/netanim && qmake NetAnim.pro && make -j2"
+}
